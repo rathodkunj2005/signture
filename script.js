@@ -81,6 +81,46 @@ function toggleDarkMode() {
 // canvas.addEventListener('mouseup', () => drawing = false);
 // canvas.addEventListener('mouseout', () => drawing = false);
 //
+const canvas = document.getElementById('signature-pad');
+const ctx = canvas.getContext('2d');
+
+let drawing = false;
+
+function draw(e) {
+    // Prevent scrolling on touch devices
+    e.preventDefault();
+
+    let x = e.clientX || e.touches[0].clientX;
+    let y = e.clientY || e.touches[0].clientY;
+
+    x -= canvas.offsetLeft;
+    y -= canvas.offsetTop;
+
+    if (drawing) {
+        ctx.lineTo(x, y);
+        ctx.stroke();
+    }
+}
+
+function startDrawing(e) {
+    drawing = true;
+    draw(e); // This draws a dot for a touchstart event
+}
+
+function stopDrawing() {
+    drawing = false;
+    ctx.beginPath(); // Begin a new path for the next drawing segment
+}
+
+canvas.addEventListener('mousedown', startDrawing);
+canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('mouseup', stopDrawing);
+canvas.addEventListener('mouseout', stopDrawing);
+
+// Touch event listeners
+canvas.addEventListener('touchstart', startDrawing);
+canvas.addEventListener('touchmove', draw);
+canvas.addEventListener('touchend', stopDrawing);
 
 
 

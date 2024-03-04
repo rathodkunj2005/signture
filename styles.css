@@ -60,6 +60,10 @@ button {
     background: white; /* Canvas background white */
     color: black; /* Signature color */
 }
+.signature-pad {
+    touch-action: none; /* This prevents the page from scrolling when you draw */
+    image-rendering: pixelated; /* This keeps the lines sharp */
+}
 
 /* You can invert the colors or choose a different approach as needed */
 
