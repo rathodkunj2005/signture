@@ -1,20 +1,53 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>SingDoc by NXT</title>-->
+<!--    <link rel="stylesheet" href="styles.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="content">-->
+<!--    <img src="image.png" alt="NXT Logo" id="logo" class="center-logo">-->
+<!--    <h1 id="title" class="center-text">SignDoc</h1>-->
+<!--    <canvas id="signature-pad" class="signature-pad"></canvas>-->
+<!--    <div class="buttons">-->
+<!--        <button id="clear-btn">Clear</button>-->
+<!--        <button id="download-btn">Download</button>-->
+<!--        <button id="toggle-dark-mode">Toggle Dark Mode</button>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<script src="script.js"></script>-->
+<!--</body>-->
+<!--</html>-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SingDoc by NXT</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=SF+Pro+Display:400,500,600,700&display=swap">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="content">
     <img src="image.png" alt="NXT Logo" id="logo" class="center-logo">
-    <h1 id="title" class="center-text">SignDoc</h1>
-    <canvas id="signature-pad" class="signature-pad"></canvas>
-    <div class="buttons">
-        <button id="clear-btn">Clear</button>
-        <button id="download-btn">Download</button>
-        <button id="toggle-dark-mode">Toggle Dark Mode</button>
+    <h1 id="title" class="center-text">SignDoc || Kunj Rathod</h1>
+    <div class="signature-pad-container">
+        <canvas id="signature-pad" width="400" height="200"></canvas>
+        <div class="toolbar">
+            <button id="clear-btn" class="toolbar-btn">Clear</button>
+            <button id="download-btn" class="toolbar-btn">Download</button>
+            <button id="toggle-dark-mode" class="toolbar-btn">Toggle Dark Mode</button>
+            <div class="color-picker-container">
+                <input type="color" id="color-picker" value="#000000">
+                <label for="color-picker">Pen Color</label>
+            </div>
+            <div class="line-width-container">
+                <input type="range" id="line-width" min="1" max="10" value="2">
+                <label for="line-width">Line Width</label>
+            </div>
+        </div>
     </div>
 </div>
 <script src="script.js"></script>
